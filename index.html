@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentIQ - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+
+        .email-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        input[type="email"] {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 12px 30px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff5252;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TalentIQ</h1>
+        <p class="tagline">Coming Soon</p>
+        <p class="description">Discover the future of talent management. Stay tuned for something extraordinary.</p>
+        
+        <form class="email-form" onsubmit="event.preventDefault(); alert('Thank you for your interest!')">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+
+        <div class="social-links">
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="LinkedIn">in</a>
+            <a href="#" title="Facebook">f</a>
+        </div>
+    </div>
+</body>
+</html>
