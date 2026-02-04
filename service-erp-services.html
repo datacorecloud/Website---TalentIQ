@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>TalentIQ Solution</title>
+    <meta name="title" content="TalentIQ Solution">
+    <meta name="description" content="TalentIQ Solution provides ERP services to help businesses streamline operations and improve efficiency.">
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
+
+    <style>
+   .erp-section {
+  background: linear-gradient(135deg, #ffffff, #f4f9ff);
+  padding: 80px 0;
+}
+
+.erp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* FIXES EDGE TOUCHING */
+}
+
+/* HEADER */
+.erp-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.erp-header h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0051a8;
+}
+
+.erp-header p {
+  font-size: 1.15rem;
+  color: #6a6a8a;
+}
+
+/* INTRO */
+.erp-intro {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  color: #4a4a6a;
+}
+
+/* STATS */
+.erp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 81, 168, 0.12);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0066cc;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7a7a8a;
+}
+
+/* GRAPH */
+.erp-graph-card {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0,81,168,0.15);
+  margin-bottom: 70px;
+}
+
+.erp-graph-card h3 {
+  margin-bottom: 20px;
+  color: #0051a8;
+}
+
+#erpGraph {
+  width: 100%;
+  height: 160px;
+}
+
+/* CONTENT GRID */
+.erp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.erp-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,81,168,0.12);
+}
+
+.erp-card.wide {
+  grid-column: span 2;
+}
+
+.erp-card.highlight {
+  border-left: 6px solid #0066cc;
+}
+
+.erp-card ul,
+.erp-card ol {
+  padding-left: 18px;
+}
+
+/* BUTTON */
+.erp-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* ===== ANIMATION BASE ===== */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Card hover polish */
+.erp-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.erp-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 55px rgba(0,81,168,0.18);
+}
+
+/* Stat pulse */
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.04);
+}
+
+/* Button animation */
+.erp-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.erp-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-100%);
+}
+
+.erp-btn:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.7s ease;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .erp-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .erp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .erp-card.wide {
+    grid-column: span 1;
+  }
+}
+
+
+    </style>
+
+</head>
+
+<body id="top">
+
+    <!-- 
+    - #PRELOADER
+  -->
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Web And Application Development</p>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #TOP BAR
+  -->
+
+    <div class="topbar">
+        <div class="container">
+
+            <address class="topbar-item">
+                <div class="icon">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">
+                    4 Lehigh court,Little Rock, AR, 72204 
+                </span>
+            </address>
+
+            <div class="separator"></div>
+
+            <div class="topbar-item item-2">
+                <div class="icon">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">24/7 Support</span>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <span class="span"> <a href="https://www.facebook.com/Supportaholic/"><i class="fa fa-facebook"></i></a></span>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsy">
+                <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" ><i class="fa fa-youtube"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsi">
+                <a href="https://www.instagram.com/supportaholictechnologies/?hl=en"><i class="fa fa-instagram"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <a href="https://www.linkedin.com/company/supportaholic-technologies/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <a href="tel:+919654118822" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">+ 91-965-411-8822</span>
+            </a>
+
+            <div class="separator"></div>
+
+            <a href="mailto:info@talentiqsolution.com" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">info@talentiqsolution.com</span>
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Home">
+            </a>
+
+            <nav class="navbar" data-navbar>
+
+                <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="#" class="logo">
+                    <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Talent IQ Solution">
+                </a>
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item mega-menu">
+
+                        <button class="navbar-link hover-underline mega-toggle"
+                                type="button"
+                                aria-expanded="false">
+                            <div class="separator"></div>
+                            <span class="span" style="color: aliceblue;">Services</span>
+                        </button>
+
+                        <div class="mega-panel">
+
+                            <div class="mega-left">
+                            <button class="mega-tab active" data-target="it">IT Services</button>
+                            <button class="mega-tab" data-target="staffing">US Staffing Services</button>
+                            <button class="mega-tab" data-target="outsourcing">Outsourcing & Offshoring</button>
+                            </div>
+
+                            <div class="mega-right">
+                            <div class="mega-content active" id="it">
+                                <a href="./service-web-development.html">Web Development</a>
+                                <a href="./service-application-development.html">Application Development</a>
+                                <a href="./service-crm-services.html">CRM Services</a>
+                                <a href="./service-erp-services.html">ERP Services</a>
+                            </div>
+
+                            <div class="mega-content" id="staffing">
+                                <a href="./service11-it-staffing-services.html">IT Staffing Services</a>
+                                <a href="./services12-healthcare-staffing.html">Healthcare Staffing Solution</a>
+                                <a href="./service10-non-it-staffing.html">Non-IT Staffing</a>
+                            </div>
+
+                            <div class="mega-content" id="outsourcing">
+                                <a href="./service-ecommerce-digital-market.html">E-Commerce & Digital Marketing</a>
+                                <a href="./service6-chat-support.html">24×7 Customer Support</a>
+                                <a href="./service6-chat-support.html">Chat Support</a>
+                                <a href="./service9-data-entry.html">Data Entry & Management</a>
+                            </div>
+                            </div>
+
+                        </div>
+                        </li>
+
+
+                    <li class="navbar-item">
+                        <a href="about-us.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">About Us</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="our-team.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Our Team</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="contact.html#contact" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Contact</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="text-center">
+                    <p class="headline-1 navbar-title">Visit Us</p>
+
+                    <address class="body-4">
+                       4 Lehigh court,Little Rock, AR, 72204 
+                    </address>
+
+                    <p class="body-4 navbar-text">27/7 Support</p>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 sidebar-link">info@talentiqsolution.com</a>
+
+                    <div class="separator"></div>
+
+                    <p class="contact-label">Call-US At</p>
+
+                    <a href="tel:+919654118822" class="body-1 contact-number hover-underline">
+                        + 91-965-411-8822
+                    </a>
+                </div>
+
+            </nav>
+
+   
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="hero text-center" aria-label="home" id="home">
+
+                <ul class="hero-slider" data-hero-slider>
+
+                    <li class="slider-item active" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Take Our Help To Reach <br>
+                            The Top Level
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            We Provide Solution On <br>
+                            Your Business
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Where every Client <br>
+                            tells a story
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact US</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact US</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+                    <ion-icon name="chevron-back"></ion-icon>
+                </button>
+
+                <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </button>
+
+                  <a href="contact.html#contact" class="hero-btn has-after">
+                    <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+
+                    <span class="label-2 text-center span">Request a Callback</span>
+                </a>
+
+           
+
+            </section>
+
+
+
+         <section class="section erp-section" aria-labelledby="erp-label">
+
+  <div class="erp-container">
+
+    <!-- HEADER -->
+    <div class="erp-header animate">
+      <h1 id="erp-label">ERP Services</h1>
+      <p>
+        Streamline Operations with Scalable ERP Solutions
+      </p>
+    </div>
+
+    <!-- INTRO -->
+    <div class="erp-intro animate delay-1">
+      <p>
+        We provide ERP services that help United States businesses run operations more smoothly,
+        improve visibility, and grow with ease. Our ERP solutions are designed to connect core
+        business functions, reduce manual processes, and provide accurate, real-time data for
+        better decision-making.
+      </p>
+      <p>
+        We focus on practical ERP systems that support business growth without unnecessary
+        complexity.
+      </p>
+    </div>
+
+    <!-- STATS -->
+    <div class="erp-stats animate delay-2">
+      <div class="stat-card">
+        <span class="stat-number">42%</span>
+        <span class="stat-label">Reduction in Manual Work</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">3×</span>
+        <span class="stat-label">Faster Reporting</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">99.2%</span>
+        <span class="stat-label">System Uptime</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">35%</span>
+        <span class="stat-label">Operational Efficiency</span>
+      </div>
+    </div>
+
+    <!-- GRAPH -->
+    <div class="erp-graph-card animate delay-3">
+      <h3>ERP Operational Flow</h3>
+      <canvas id="erpGraph"></canvas>
+    </div>
+
+    <!-- CONTENT GRID -->
+    <div class="erp-grid">
+
+      <div class="erp-card animate delay-1">
+        <h3>What We Do</h3>
+        <ul>
+          <li>ERP consulting and system assessment</li>
+          <li>ERP setup and configuration</li>
+          <li>Data migration and system integration</li>
+          <li>Workflow automation and reporting</li>
+          <li>ERP customization and optimization</li>
+          <li>Ongoing support and maintenance</li>
+        </ul>
+      </div>
+
+      <div class="erp-card animate delay-2" >
+        <h3>Who This Service Is For</h3>
+        <ul>
+          <li>Mid-sized and enterprise organizations</li>
+          <li>Businesses moving away from outdated systems</li>
+          <li>Companies that want better automation and reporting</li>
+          <li>Organizations needing scalable platforms</li>
+          <li>Teams looking for ongoing ERP improvements</li>
+        </ul>
+      </div>
+
+      <div class="erp-card animate delay-3">
+        <h3>Business Challenges We Address</h3>
+        <ul>
+          <li>Disconnected finance, operations, and inventory systems</li>
+          <li>Manual and error-prone processes</li>
+          <li>Limited reporting and real-time visibility</li>
+          <li>Difficulty scaling systems</li>
+          <li>High maintenance costs of legacy platforms</li>
+          <li>Poor integration with CRM or web platforms</li>
+        </ul>
+      </div>
+
+      <div class="erp-card animate delay-2">
+        <h3>How We Deliver ERP Projects</h3>
+        <ol>
+          <li>Discovery & process review</li>
+          <li>Solution design</li>
+          <li>Implementation & setup</li>
+          <li>Data migration & integration</li>
+          <li>Testing, training & launch</li>
+          <li>Ongoing support & optimization</li>
+        </ol>
+      </div>
+
+      <div class="erp-card  wide highlight animate delay-4">
+        <h3>Why Choose Talent IQ Solution for ERP Engagement</h3>
+        <ul>
+          <li>Business-focused ERP consulting approach</li>
+          <li>Experienced ERP consultants and delivery teams</li>
+          <li>Clear project management and transparency</li>
+          <li>Secure data handling and compliance awareness</li>
+          <li>Integration-focused ERP delivery</li>
+          <li>Long-term partnership and ongoing support</li>
+        </ul>
+
+        <a href="contact.html#contact" class="erp-btn">Schedule a Discovery Call</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+        </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer section has-bg-image text-center"
+        style="background-image: url('./assets/images/footer-bg.jpg')">
+        <div class="container">
+
+            <div class="footer-top grid-list">
+
+                <div class="footer-brand has-before has-after">
+
+                    <a href="#" class="logo">
+                        <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50"
+                            loading="lazy" alt="Talent IQ Solution Logo">
+                    </a>
+
+                    <address class="body-4">
+                        4 Lehigh court,Little Rock, AR, 72204 
+                    </address>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 contact-link">info@talentiqsolution.com</a>
+
+                    <a href="tel:+919654118822" class="body-4 contact-link">Call-us at (IND) :  + 91-965-411-8822</a>
+                    <a href="tel:+1800123444443" class="body-4 contact-link">Call-us at (US) :  + 1-800-1234-44443</a>
+                    
+                    <p class="body-4">
+                        Open : 24/7 Weekdays
+                    </p>
+
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+
+        
+
+           
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html" class="label-2 footer-link hover-underline">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="about-us.html" class="label-2 footer-link hover-underline">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="our-team.html" class="label-2 footer-link hover-underline">Our Team</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html#contact" class="label-2 footer-link hover-underline">Contact</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="https://www.facebook.com/Supportaholic/" class="label-2 footer-link hover-underline">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/supportaholictechnologies/?hl=en" class="label-2 footer-link hover-underline">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/company/supportaholic-technologies/" class="label-2 footer-link hover-underline">Linkedin</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" class="label-2 footer-link hover-underline">Youtube</a>
+                    </li>
+
+                    
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    &copy; 2026 Talent IQ Solution. All Rights Reserved | Made with love <a href="https://talentiqsolution.com"
+                        target="_blank" class="link">Talent IQ Solution</a>
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+/* ===== SCROLL REVEAL ===== */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+
+/* ===== COUNT-UP STATS ===== */
+const counters = document.querySelectorAll(".stat-number");
+let counterStarted = false;
+
+function animateCounters() {
+  if (counterStarted) return;
+  counterStarted = true;
+
+  counters.forEach(counter => {
+    const targetText = counter.innerText;
+    const isPercent = targetText.includes("%");
+    const isMultiplier = targetText.includes("×");
+
+    let target = parseFloat(targetText);
+    let current = 0;
+    const speed = target / 60;
+
+    const update = () => {
+      current += speed;
+      if (current >= target) {
+        counter.innerText = targetText;
+      } else {
+        counter.innerText = 
+          isPercent ? `${current.toFixed(0)}%` :
+          isMultiplier ? `${current.toFixed(1)}×` :
+          Math.floor(current);
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+  });
+}
+
+observer.observe(document.querySelector(".erp-stats"));
+
+/* ===== ERP GRAPH DRAW ANIMATION ===== */
+// const canvas = document.getElementById("erpGraph");
+// const ctx = canvas.getContext("2d");
+// let progress = 0;
+
+// function resizeERPGraph() {
+//   canvas.width = canvas.offsetWidth;
+//   canvas.height = 160;
+// }
+
+// function drawERPGraph() {
+//   resizeERPGraph();
+//   ctx.clearRect(0,0,canvas.width,canvas.height);
+
+//   const steps = ["Finance", "Operations", "Inventory", "Reporting"];
+//   const spacing = canvas.width / (steps.length + 1);
+//   const y = canvas.height / 2;
+
+//   ctx.lineWidth = 3;
+//   ctx.strokeStyle = "#0066cc";
+
+//   steps.forEach((step, i) => {
+//     const x = spacing * (i + 1);
+
+//     if (i > 0) {
+//       ctx.beginPath();
+//       ctx.moveTo(x - spacing + 35, y);
+//       ctx.lineTo(x - 35 * progress, y);
+//       ctx.stroke();
+//     }
+
+//     ctx.beginPath();
+//     ctx.arc(x, y, 12 * progress, 0, Math.PI * 2);
+//     ctx.fillStyle = "#0099ff";
+//     ctx.fill();
+
+//     ctx.fillStyle = "#0051a8";
+//     ctx.font = "600 12px Segoe UI";
+//     ctx.textAlign = "center";
+//     ctx.fillText(step, x, y + 32);
+//   });
+
+//   if (progress < 1) {
+//     progress += 0.02;
+//     requestAnimationFrame(drawERPGraph);
+//   }
+// }
+
+window.addEventListener("resize", drawERPGraph);
+
+observer.observe(document.querySelector(".erp-graph-card"));
+setTimeout(drawERPGraph, 400);
+</script>
+
+    <script>
+const canvas = document.getElementById("erpGraph");
+const ctx = canvas.getContext("2d");
+
+function resizeERPGraph() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 160;
+}
+
+function drawERPGraph() {
+  resizeERPGraph();
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  const steps = ["Finance", "Operations", "Inventory", "Reporting"];
+  const spacing = canvas.width / (steps.length + 1);
+  const y = canvas.height / 2;
+
+  ctx.strokeStyle = "#0066cc";
+  ctx.lineWidth = 3;
+
+  steps.forEach((step, i) => {
+    const x = spacing * (i + 1);
+
+    if (i > 0) {
+      ctx.beginPath();
+      ctx.moveTo(x - spacing + 35, y);
+      ctx.lineTo(x - 35, y);
+      ctx.stroke();
+    }
+
+    ctx.beginPath();
+    ctx.arc(x, y, 12, 0, Math.PI * 2);
+    ctx.fillStyle = "#0099ff";
+    ctx.fill();
+
+    ctx.fillStyle = "#0051a8";
+    ctx.font = "600 12px Segoe UI";
+    ctx.textAlign = "center";
+    ctx.fillText(step, x, y + 32);
+  });
+}
+
+window.addEventListener("resize", drawERPGraph);
+drawERPGraph();
+</script>
+
+
+
+</body>
+
+</html>

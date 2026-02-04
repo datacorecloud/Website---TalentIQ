@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>TalentIQ Solution</title>
+    <meta name="title" content="TalentIQ Solution">
+    <meta name="description" content="TalentIQ Solution provides web and application development services. We specialize in creating custom solutions that drive business growth and efficiency.">
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
+
+    <style>
+        .web-dev-section {
+  position: relative;
+}
+
+.web-dev-header {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.web-dev-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0051a8, #0066cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.web-dev-header p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #6a6a8a;
+}
+
+.web-dev-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 35px;
+}
+
+/* Cards */
+.web-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 35px;
+  border: 1px solid rgba(0,102,204,0.1);
+  box-shadow: 0 12px 40px rgba(0,81,168,0.15);
+  position: relative;
+  transition: all 0.35s ease;
+}
+
+.web-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #0066cc, #0099ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.web-card:hover::before {
+  transform: scaleX(1);
+}
+
+.web-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 55px rgba(0,81,168,0.25);
+}
+
+.web-card h2,
+.web-card h3 {
+  color: #0051a8;
+  margin-bottom: 15px;
+}
+
+.web-card p {
+  color: #5a5a7a;
+  line-height: 1.7;
+}
+
+.web-card ul,
+.web-card ol {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #5a5a7a;
+}
+
+.web-card li {
+  margin-bottom: 8px;
+}
+
+/* Wide cards */
+.web-card.wide {
+  grid-column: span 2;
+}
+
+.web-card.highlight {
+  background: linear-gradient(135deg, #f8fbff, #f0f6ff);
+}
+
+/* CTA */
+.web-cta {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 38px;
+  background: linear-gradient(135deg, #0066cc, #0051a8);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,81,168,0.4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .web-card.wide {
+    grid-column: span 1;
+  }
+
+  .web-dev-header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- 
+    - #PRELOADER
+  -->
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Web And Application Development</p>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #TOP BAR
+  -->
+
+    <div class="topbar">
+        <div class="container">
+
+            <address class="topbar-item">
+                <div class="icon">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">
+                    4 Lehigh court,Little Rock, AR, 72204 
+                </span>
+            </address>
+
+            <div class="separator"></div>
+
+            <div class="topbar-item item-2">
+                <div class="icon">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">24/7 Support</span>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <span class="span"> <a href="https://www.facebook.com/Supportaholic/"><i class="fa fa-facebook"></i></a></span>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsy">
+                <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" ><i class="fa fa-youtube"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsi">
+                <a href="https://www.instagram.com/supportaholictechnologies/?hl=en"><i class="fa fa-instagram"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <a href="https://www.linkedin.com/company/supportaholic-technologies/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <a href="tel:+919654118822" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">+ 91-965-411-8822</span>
+            </a>
+
+            <div class="separator"></div>
+
+            <a href="mailto:info@talentiqsolution.com" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">info@talentiqsolution.com</span>
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Home">
+            </a>
+
+            <nav class="navbar" data-navbar>
+
+                <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="#" class="logo">
+                    <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Talent IQ Solution Logo">
+                </a>
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item mega-menu">
+
+                        <button class="navbar-link hover-underline mega-toggle"
+                                type="button"
+                                aria-expanded="false">
+                            <div class="separator"></div>
+                            <span class="span" style="color: aliceblue;">Services</span>
+                        </button>
+
+                        <div class="mega-panel">
+
+                            <div class="mega-left">
+                            <button class="mega-tab active" data-target="it">IT Services</button>
+                            <button class="mega-tab" data-target="staffing">US Staffing Services</button>
+                            <button class="mega-tab" data-target="outsourcing">Outsourcing & Offshoring</button>
+                            </div>
+
+                            <div class="mega-right">
+                            <div class="mega-content active" id="it">
+                                <a href="./service-web-development.html">Web Development</a>
+                                <a href="./service-application-development.html">Application Development</a>
+                                <a href="./service-crm-services.html">CRM Services</a>
+                                <a href="./service-erp-services.html">ERP Services</a>
+                            </div>
+
+                            <div class="mega-content" id="staffing">
+                                <a href="./service11-it-staffing-services.html">IT Staffing Services</a>
+                                <a href="./services12-healthcare-staffing.html">Healthcare Staffing Solution</a>
+                                <a href="./service10-non-it-staffing.html">Non-IT Staffing</a>
+                            </div>
+
+                            <div class="mega-content" id="outsourcing">
+                                <a href="./service-ecommerce-digital-market.html">E-Commerce & Digital Marketing</a>
+                                <a href="./service6-chat-support.html">24×7 Customer Support</a>
+                                <a href="./service6-chat-support.html">Chat Support</a>
+                                <a href="./service9-data-entry.html">Data Entry & Management</a>
+                            </div>
+                            </div>
+
+                        </div>
+                        </li>
+
+
+                    <li class="navbar-item">
+                        <a href="about-us.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">About Us</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="our-team.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Our Team</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="contact.html#contact" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Contact</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="text-center">
+                    <p class="headline-1 navbar-title">Visit Us</p>
+
+                    <address class="body-4">
+                        4 Lehigh court,Little Rock, AR, 72204 
+                    </address>
+
+                    <p class="body-4 navbar-text">27/7 Support</p>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 sidebar-link">info@talentiqsolution.com</a>
+
+                    <div class="separator"></div>
+
+                    <p class="contact-label">Call-US At</p>
+
+                    <a href="tel:+919654118822" class="body-1 contact-number hover-underline">
+                        + 91-965-411-8822
+                    </a>
+                </div>
+
+            </nav>
+
+   
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="hero text-center" aria-label="home" id="home">
+
+                <ul class="hero-slider" data-hero-slider>
+
+                    <li class="slider-item active" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution </p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Take Our Help To Reach <br>
+                            The Top Level
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution </p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            We Provide Solution On <br>
+                            Your Business
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution </p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Where every Client <br>
+                            tells a story
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact US</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact US</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+                    <ion-icon name="chevron-back"></ion-icon>
+                </button>
+
+                <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </button>
+
+                  <a href="contact.html#contact" class="hero-btn has-after">
+                    <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+
+                    <span class="label-2 text-center span">Request a Callback</span>
+                </a>
+
+           
+
+            </section>
+
+
+
+         <section class="section web-dev-section" aria-labelledby="web-dev-label">
+
+  <div class="web-dev-header">
+    <h1 id="web-dev-label">Web Development Services</h1>
+    <p>
+      Build secure, scalable, and business-focused web solutions designed to support
+      long-term growth, performance, and operational reliability.
+    </p>
+  </div>
+  
+  <div class="web-dev-grid">
+
+    <!-- OVERVIEW -->
+    <div class="web-card wide">
+      <h2>Build Secure, Scalable & Business-Focused Web Solutions</h2>
+      <p>
+        In today’s digital-first world, having a strong website is essential for business success.
+        We provide professional web development services that help businesses build fast, secure,
+        and scalable websites and web applications aligned with real business goals.
+      </p>
+      <p>
+        Our solutions are easy to manage, future-ready, and designed to integrate seamlessly
+        with your ERP, CRM, and third-party systems.
+      </p>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="web-card">
+      <h3>What We Do</h3>
+      <ul>
+        <li>Custom website development</li>
+        <li>Business & enterprise web applications</li>
+        <li>Customer & partner portals</li>
+        <li>E-commerce platforms</li>
+        <li>CMS-based & custom-managed websites</li>
+        <li>Website upgrades & re-platforming</li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="web-card">
+      <h3>Our Web Development Services</h3>
+      <ul>
+        <li><strong>Custom Website Development</strong> – Brand-aligned, scalable, high-performance websites</li>
+        <li><strong>Web Application Development</strong> – Secure business applications & automation</li>
+        <li><strong>eCommerce Development</strong> – Conversion-focused online stores</li>
+        <li><strong>CMS-Based Websites</strong> – Easy content management</li>
+        <li><strong>Website Redesign & Optimization</strong> – Speed, UX & mobile improvements</li>
+      </ul>
+    </div>
+
+    <!-- WHO WE SERVE -->
+    <div class="web-card">
+      <h3>Who We Serve</h3>
+      <ul>
+        <li>Mid-sized & enterprise businesses</li>
+        <li>Startups building MVPs or internal platforms</li>
+        <li>Organizations modernizing legacy systems</li>
+        <li>Companies needing secure & scalable web apps</li>
+        <li>Businesses integrating ERP, CRM & third-party tools</li>
+      </ul>
+    </div>
+
+    <!-- DELIVERY PROCESS -->
+    <div class="web-card">
+      <h3>How We Deliver</h3>
+      <ol>
+        <li>Discovery & business requirement analysis</li>
+        <li>Solution design & technology selection</li>
+        <li>Secure development & integrations</li>
+        <li>Testing, performance & security checks</li>
+        <li>Deployment & ongoing support</li>
+      </ol>
+    </div>
+
+    <!-- TECHNOLOGY STACK -->
+    <div class="web-card">
+      <h3>Technologies We Use</h3>
+      <p><strong>Frontend:</strong> HTML, CSS, JavaScript, React, Angular</p>
+      <p><strong>Backend:</strong> PHP, Node.js, Python, .NET</p>
+      <p><strong>CMS:</strong> WordPress, Custom CMS</p>
+      <p><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</p>
+      <p><strong>Cloud & Hosting:</strong> AWS, Azure, secure cloud environments</p>
+    </div>
+
+    <!-- WHY CHOOSE -->
+    <div class="web-card wide highlight">
+      <h2>Why Choose Us for Web Development</h2>
+      <ul>
+        <li>Experienced web developers with enterprise expertise</li>
+        <li>Clean, scalable & secure code standards</li>
+        <li>Mobile-responsive & SEO-friendly development</li>
+        <li>Fast-loading, performance-optimized websites</li>
+        <li>Transparent communication & timely delivery</li>
+        <li>Long-term support & maintenance</li>
+      </ul>
+      <p class="web-cta">
+        We focus on building websites that support real business outcomes — not just visual appeal.
+      </p>
+      <a href="contact.html" class="cta-btn">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+        </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer section has-bg-image text-center"
+        style="background-image: url('./assets/images/footer-bg.jpg')">
+        <div class="container">
+
+            <div class="footer-top grid-list">
+
+                <div class="footer-brand has-before has-after">
+
+                    <a href="#" class="logo">
+                        <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50"
+                            loading="lazy" alt="Talent IQ Solution">
+                    </a>
+
+                    <address class="body-4">
+                        G-192, Sector-63, Noida, India
+                    </address>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 contact-link">info@talentiqsolution.com</a>
+
+                    <a href="tel:+919654118822" class="body-4 contact-link">Call-us at (IND) :  + 91-965-411-8822</a>
+                    <a href="tel:+1800123444443" class="body-4 contact-link">Call-us at (US) :  + 1-800-1234-44443</a>
+                    
+                    <p class="body-4">
+                        Open : 24/7 Weekdays
+                    </p>
+
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+
+        
+
+           
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html" class="label-2 footer-link hover-underline">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="about-us.html" class="label-2 footer-link hover-underline">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="our-team.html" class="label-2 footer-link hover-underline">Our Team</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html#contact" class="label-2 footer-link hover-underline">Contact</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="https://www.facebook.com/Supportaholic/" class="label-2 footer-link hover-underline">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/supportaholictechnologies/?hl=en" class="label-2 footer-link hover-underline">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/company/supportaholic-technologies/" class="label-2 footer-link hover-underline">Linkedin</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" class="label-2 footer-link hover-underline">Youtube</a>
+                    </li>
+
+                    
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    &copy; 2026 Talent IQ Solution . All Rights Reserved | Made with love <a href="https://talentiqsolution.com"
+                        target="_blank" class="link">Talent IQ Solution</a>
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

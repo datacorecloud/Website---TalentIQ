@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+  -->
+    <title>TalentIQ Solution</title>
+    <meta name="title" content="TalentIQ Solution">
+    <meta name="description" content="TalentIQ Solution - Your Trusted Partner In Tech-Driven Efficiency. We Provide Web Development, Application Development, CRM Services, ERP Services, IT Staffing Services, Healthcare Staffing Solution, Non-IT Staffing, E-Commerce & Digital Marketing, 24×7 Customer Support, Chat Support, Data Entry & Management.">
+
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap"
+        rel="stylesheet">
+
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
+    <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
+
+    <style>
+        .crm-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+}
+
+/* HEADER */
+.crm-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+/* DASHBOARD VISUAL */
+.crm-visual {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.crm-dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1000px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px rgba(0, 81, 168, 0.18);
+  border: 1px solid rgba(0, 102, 204, 0.12);
+}
+
+.dashboard-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f8fbff, #eef4ff);
+  border: 1px solid rgba(0, 102, 204, 0.08);
+  text-align: center;
+}
+
+.dashboard-card h4 {
+  font-size: 1rem;
+  color: #0051a8;
+  margin-bottom: 8px;
+}
+
+.metric {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric.big {
+  font-size: 2.6rem;
+}
+
+.dashboard-card span {
+  font-size: 0.85rem;
+  color: #6a6a8a;
+}
+
+/* CRM CONTENT GRID */
+.crm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.crm-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 35px rgba(0, 81, 168, 0.12);
+}
+
+.crm-card.wide {
+  grid-column: span 3;
+}
+
+.crm-card.highlight {
+  background: linear-gradient(135deg, #f0f6ff, #ffffff);
+  border-left: 5px solid #0066cc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .crm-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .crm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .crm-card.wide {
+    grid-column: span 1;
+  }
+}
+
+    </style>
+</head>
+
+<body id="top">
+
+    <!-- 
+    - #PRELOADER
+  -->
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text">Web And Application Development</p>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #TOP BAR
+  -->
+
+    <div class="topbar">
+        <div class="container">
+
+            <address class="topbar-item">
+                <div class="icon">
+                    <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">
+                    4 Lehigh court,Little Rock, AR, 72204 
+                </span>
+            </address>
+
+            <div class="separator"></div>
+
+            <div class="topbar-item item-2">
+                <div class="icon">
+                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">24/7 Support</span>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <span class="span"> <a href="https://www.facebook.com/Supportaholic/"><i class="fa fa-facebook"></i></a></span>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsy">
+                <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" ><i class="fa fa-youtube"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsi">
+                <a href="https://www.instagram.com/supportaholictechnologies/?hl=en"><i class="fa fa-instagram"></i></a>
+            </div>
+            </div>
+            <div class="topbar-item ">
+                <div class="iconsl">
+                <a href="https://www.linkedin.com/company/supportaholic-technologies/"><i class="fa fa-linkedin"></i></a>
+            </div>
+            </div>
+
+            <a href="tel:+919654118822" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">+ 91-965-411-8822</span>
+            </a>
+
+            <div class="separator"></div>
+
+            <a href="mailto:info@talentiqsolution.com" class="topbar-item link">
+                <div class="icon">
+                    <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <span class="span">info@talentiqsolution.com</span>
+            </a>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Home">
+            </a>
+
+            <nav class="navbar" data-navbar>
+
+                <button class="close-btn" aria-label="close menu" data-nav-toggler>
+                    <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <a href="#" class="logo">
+                    <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50" alt="Talent IQ Solution">
+                </a>
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <a href="index.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Home</span>
+                        </a>
+                    </li>
+
+                  <li class="navbar-item mega-menu">
+
+                        <button class="navbar-link hover-underline mega-toggle"
+                                type="button"
+                                aria-expanded="false">
+                            <div class="separator"></div>
+                            <span class="span" style="color: aliceblue;">Services</span>
+                        </button>
+
+                        <div class="mega-panel">
+
+                            <div class="mega-left">
+                            <button class="mega-tab active" data-target="it">IT Services</button>
+                            <button class="mega-tab" data-target="staffing">US Staffing Services</button>
+                            <button class="mega-tab" data-target="outsourcing">Outsourcing & Offshoring</button>
+                            </div>
+
+                            <div class="mega-right">
+                            <div class="mega-content active" id="it">
+                                <a href="./service-web-development.html">Web Development</a>
+                                <a href="./service-application-development.html">Application Development</a>
+                                <a href="./service-crm-services.html">CRM Services</a>
+                                <a href="./service-erp-services.html">ERP Services</a>
+                            </div>
+
+                            <div class="mega-content" id="staffing">
+                                <a href="./service11-it-staffing-services.html">IT Staffing Services</a>
+                                <a href="./services12-healthcare-staffing.html">Healthcare Staffing Solution</a>
+                                <a href="./service10-non-it-staffing.html">Non-IT Staffing</a>
+                            </div>
+
+                            <div class="mega-content" id="outsourcing">
+                                <a href="./service-ecommerce-digital-market.html">E-Commerce & Digital Marketing</a>
+                                <a href="./service6-chat-support.html">24×7 Customer Support</a>
+                                <a href="./service6-chat-support.html">Chat Support</a>
+                                <a href="./service9-data-entry.html">Data Entry & Management</a>
+                            </div>
+                            </div>
+
+                        </div>
+                        </li>
+
+
+                    <li class="navbar-item">
+                        <a href="about-us.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">About Us</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="our-team.html" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Our Team</span>
+                        </a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="contact.html#contact" class="navbar-link hover-underline">
+                            <div class="separator"></div>
+
+                            <span class="span">Contact</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="text-center">
+                    <p class="headline-1 navbar-title">Visit Us</p>
+
+                    <address class="body-4">
+                        4 Lehigh court,Little Rock, AR, 72204 
+                    </address>
+
+                    <p class="body-4 navbar-text">27/7 Support</p>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 sidebar-link">info@talentiqsolution.com</a>
+
+                    <div class="separator"></div>
+
+                    <p class="contact-label">Call-US At</p>
+
+                    <a href="tel:+919654118822" class="body-1 contact-number hover-underline">
+                        + 91-965-411-8822
+                    </a>
+                </div>
+
+            </nav>
+
+   
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="hero text-center" aria-label="home" id="home">
+
+                <ul class="hero-slider" data-hero-slider>
+
+                    <li class="slider-item active" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Take Our Help To Reach <br>
+                            The Top Level
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            We Provide Solution On <br>
+                            Your Business
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact Us</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact Us</span>
+                        </a>
+
+                    </li>
+
+                    <li class="slider-item" data-hero-slider-item>
+
+                        <div class="slider-bg">
+                            <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt=""
+                                class="img-cover">
+                        </div>
+
+                        <p class="label-2 section-subtitle slider-reveal">Talent IQ Solution</p>
+
+                        <h1 class="display-1 hero-title slider-reveal">
+                            Where every Client <br>
+                            tells a story
+                        </h1>
+
+                        <p class="body-2 hero-text slider-reveal">
+                            Your Trusted Partner In Tech-Driven Efficiency
+                        </p>
+
+                        <a href="contact.html#contact" class="btn btn-primary slider-reveal">
+                            <span class="text text-1">Contact US</span>
+
+                            <span class="text text-2" aria-hidden="true">Contact US</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+
+                <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+                    <ion-icon name="chevron-back"></ion-icon>
+                </button>
+
+                <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </button>
+
+                  <a href="contact.html#contact" class="hero-btn has-after">
+                    <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+
+                    <span class="label-2 text-center span">Request a Callback</span>
+                </a>
+
+           
+
+            </section>
+
+
+
+          <section class="section crm-section" aria-labelledby="crm-label">
+
+  <!-- HEADER -->
+  <div class="crm-header">
+    <h1 id="crm-label">CRM Services</h1>
+    <p>
+      Improve customer engagement, sales visibility, and decision-making with
+      CRM systems designed around real business processes.
+    </p>
+  </div>
+
+  <!-- CRM DASHBOARD VISUAL (PHOTO-LIKE) -->
+  <div class="crm-visual">
+    <div class="crm-dashboard">
+
+      <div class="dashboard-card">
+        <h4>Sales Pipeline</h4>
+        <div class="metric big">+34%</div>
+        <span>Deal Velocity</span>
+      </div>
+
+      <div class="dashboard-card">
+        <h4>Lead Conversion</h4>
+        <div class="metric big">42%</div>
+        <span>Monthly Growth</span>
+      </div>
+
+      <div class="dashboard-card">
+        <h4>Customer Retention</h4>
+        <div class="metric big">94.5%</div>
+        <span>Annual Rate</span>
+      </div>
+
+      <div class="dashboard-card">
+        <h4>CRM Adoption</h4>
+        <div class="metric">87%</div>
+        <span>Active Users</span>
+      </div>
+
+      <div class="dashboard-card">
+        <h4>Avg Response</h4>
+        <div class="metric">-65%</div>
+        <span>Faster Support</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CRM CONTENT -->
+  <div class="crm-grid">
+
+    <div class="crm-card wide">
+      <h2>Improve Customer Engagement and Sales Visibility</h2>
+      <p>
+        We provide CRM services that help U.S. businesses centralize customer data,
+        streamline sales processes, and improve customer engagement across teams.
+      </p>
+      <p>
+        Our CRM solutions focus on real adoption, clean data, and measurable business outcomes.
+      </p>
+    </div>
+
+    <div class="crm-card">
+      <h3>What We Do</h3>
+      <ul>
+        <li>CRM consulting & platform assessment</li>
+        <li>CRM setup, configuration & customization</li>
+        <li>Sales, marketing & service automation</li>
+        <li>ERP, website & third-party integrations</li>
+        <li>Data migration, reporting & dashboards</li>
+        <li>Ongoing CRM optimization & support</li>
+      </ul>
+    </div>
+
+    <div class="crm-card">
+      <h3>Who We Serve</h3>
+      <ul>
+        <li>Mid-sized & enterprise organizations</li>
+        <li>Sales & marketing teams</li>
+        <li>Customer support teams</li>
+        <li>Businesses moving away from spreadsheets</li>
+        <li>Organizations integrating CRM with ERP</li>
+      </ul>
+    </div>
+
+    <div class="crm-card">
+      <h3>How We Deliver</h3>
+      <ol>
+        <li>Discovery & process review</li>
+        <li>CRM solution design</li>
+        <li>Implementation & automation</li>
+        <li>Data migration & integrations</li>
+        <li>Training, launch & adoption</li>
+        <li>Continuous improvement & support</li>
+      </ol>
+    </div>
+
+    <div class="crm-card wide highlight">
+      <h2>Why Choose Talent IQ Solution for CRM Services</h2>
+      <ul>
+        <li>Business-first CRM consulting</li>
+        <li>Integration-focused implementations</li>
+        <li>Secure data handling & compliance awareness</li>
+        <li>High user adoption focus</li>
+        <li>Long-term CRM support partnership</li>
+      </ul>
+      <a href="contact.html#contact" class="cta-btn">Schedule a Discovery Call</a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+        </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer section has-bg-image text-center"
+        style="background-image: url('./assets/images/footer-bg.jpg')">
+        <div class="container">
+
+            <div class="footer-top grid-list">
+
+                <div class="footer-brand has-before has-after">
+
+                    <a href="#" class="logo">
+                        <img src="./assets/images/talentiqsolution-logo.PNG" width="160" height="50"
+                            loading="lazy" alt="Talent IQ Solution">
+                    </a>
+
+                    <address class="body-4">
+                        4 Lehigh court,Little Rock, AR, 72204 
+                    </address>
+
+                    <a href="mailto:info@talentiqsolution.com" class="body-4 contact-link">info@talentiqsolution.com</a>
+
+                    <a href="tel:+919654118822" class="body-4 contact-link">Call-us at (IND) :  + 91-965-411-8822</a>
+                    <a href="tel:+1800123444443" class="body-4 contact-link">Call-us at (US) :  + 1-800-1234-44443</a>
+                    
+                    <p class="body-4">
+                        Open : 24/7 Weekdays
+                    </p>
+
+                    <div class="wrapper">
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                        <div class="separator"></div>
+                    </div>
+
+        
+
+           
+
+                </div>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="index.html" class="label-2 footer-link hover-underline">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="services.html" class="label-2 footer-link hover-underline">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="about-us.html" class="label-2 footer-link hover-underline">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="our-team.html" class="label-2 footer-link hover-underline">Our Team</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html#contact" class="label-2 footer-link hover-underline">Contact</a>
+                    </li>
+
+                </ul>
+
+                <ul class="footer-list">
+
+                    <li>
+                        <a href="https://www.facebook.com/Supportaholic/" class="label-2 footer-link hover-underline">Facebook</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.instagram.com/supportaholictechnologies/?hl=en" class="label-2 footer-link hover-underline">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/company/supportaholic-technologies/" class="label-2 footer-link hover-underline">Linkedin</a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCGAcfG9P0dIPwM2RPji1MfA" class="label-2 footer-link hover-underline">Youtube</a>
+                    </li>
+
+                    
+
+                </ul>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    &copy; 2026 Talent IQ Solution. All Rights Reserved | Made with love <a href="https://talentiqsolution.com"
+                        target="_blank" class="link">Talent IQ Solution</a>
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn active" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+
+
+
+
+    <!-- 
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
