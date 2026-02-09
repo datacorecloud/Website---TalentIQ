@@ -40,6 +40,19 @@
     <link rel="preload" as="image" href="./assets/images/hero-slider-2.jpg">
     <link rel="preload" as="image" href="./assets/images/hero-slider-3.jpg">
 
+    <style>
+        .form-success {
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, #e8fff1, #f0fff6);
+            color: #1a7f37;
+            border: 1px solid #27c93f;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            }
+
+    </style>
 </head>
 
 <body id="top">
@@ -432,7 +445,7 @@
 
                     <div class="form reservation-form bg-black-10">
 
-                        <form action="" class="form-left">
+                        <form id="callbackForm" class="form-left">
 
                             <h2 class="headline-2c text-center">Request a Call-Back </h2>
 
@@ -440,6 +453,10 @@
                                 Call us at <a href="tel:+13016351129" class="link">+1 301 635 1129</a>
                                 or fill out the order form
                             </p>
+
+                            <p id="formSuccess" class="form-success" style="display:none;">
+                                ✅ Thank you! You will get a callback shortly.
+                                </p>
 
                             <div class="input-wrapper">
                                 <input type="text" name="name" placeholder="Your Name" autocomplete="off"
@@ -455,8 +472,8 @@
                                     <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
                                     <select name="person" class="input-field">
-                                        <option value="INDIA">INDIA</option>
                                         <option value="USA">USA</option>
+                                        <option value="INDIA">INDIA</option>
                                         <option value="CANADA">CANADA</option>
                                         <option value="U.K">U.K</option>
                                         <option value="AUSTRALIA">AUSTRALIA</option>
@@ -537,13 +554,9 @@
                                
                                 +1 301 635 1129
                             </p>
+                            
 
-                            <!--<p class="contact-label">CANADA</p>-->
-
-                            <!--<p class="body-4">-->
-                            <!--    +22-4845522633-->
-                            <!--</p>-->
-
+                 
                         </div>
 
                     </div>
@@ -685,7 +698,7 @@
     <!-- 
     - custom js link
   -->
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script-main.js"></script>
 
     <!-- 
     - ionicon link
@@ -694,5 +707,42 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
+<script>
+const form = document.getElementById("callbackForm");
+const successMsg = document.getElementById("formSuccess");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const formData = {
+    name: form.querySelector('[name="name"]').value,
+    phone: form.querySelector('[name="phone"]').value,
+    country: form.querySelector('select[name="person"]').value,
+    date: form.querySelector('[name="reservation-date"]').value,
+    time: form.querySelectorAll('select[name="person"]')[1].value,
+    message: form.querySelector('[name="message"]').value,
+    page: window.location.pathname
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbz87zF24i8ldN0T3jdxRczyNd9BQWdXn0GPOldOcMaXJQXmQ_UIut2Q9BIQ6EA_yZu6/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  });
+
+  // Immediately show success message
+  form.reset();
+  successMsg.style.display = "block";
+
+  setTimeout(() => {
+    successMsg.style.display = "none";
+  }, 5000);
+});
+</script>
+
 
 </html>
