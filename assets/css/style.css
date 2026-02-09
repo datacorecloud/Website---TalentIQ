@@ -393,6 +393,7 @@ body.nav-active {
 }
 
 .contact-label {
+  color: var(--quick-silver);
   font-weight: var(--weight-bold);
 }
 
@@ -1535,6 +1536,8 @@ body.nav-active {
 
 .form-text {
   margin-block-end: 40px;
+  color: var(--dark-crayola);
+
 }
 
 .form-text .link {
